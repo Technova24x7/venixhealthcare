@@ -1,0 +1,19 @@
+@import "@fontsource/poppins";
+@import "@fontsource/inter";
+
+
+@theme{
+     /* Colors */
+  --color-primary: #1a4f8b;
+  --color-secondary: #4c7238;
+  --color-tertiary: #d8e0bb;
+  --color-background: #f5f1e6;
+  --color-text: #686868;
+
+  /* Fonts */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-sans: var(--font-body);
+
+
+}
