@@ -1,0 +1,9 @@
+---
+import { Icon } from "astro-icon/components";
+const title = Astro.props.title;
+const icon = Astro.props.icon;
+---
+
+<h3 class="annotation text-xl flex items-center gap-2">
+                <Icon name={icon} class="text-primary w-6 h-6" />
+                {title}</h3>

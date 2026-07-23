@@ -1,0 +1,15 @@
+---
+import {Icon} from "astro-icon/components";
+
+const title = Astro.props.title;
+const subtitle = Astro.props.subtitle;
+const icon = Astro.props.icon;
+---
+
+<div class="flex items-center gap-4">
+                <Icon name={icon} class="text-secondary w-12 h-12 shrink-0 flex-none" />
+                <div class="flex flex-col">
+                    <h4 class="font-bold text-secondary text-xl">{title}</h4>
+                    <p class="text-sm ">{subtitle}</p>
+                </div>
+</div>

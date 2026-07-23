@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import aboutUsImg from "../assets/aboutus_section.webp";
+import { Icon } from "astro-icon/components";
+---
+<div class="bg-background">
+<section class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-20 ">
+    <div>
+        <Image
+            src={aboutUsImg}
+            alt="About Us"
+            class="w-full h-auto rounded-xl object-cover"
+        />
+    </div>
+
+    <div class="flex flex-col gap-4">
+        <p class="annotation">ABOUT US</p>
+
+        <h2 class="text-primary">
+            Healthcare Innovation
+            <br />
+            Rooted in Nature
+        </h2>
+
+        <p>
+            Venix Healthcare is dedicated to developing high-quality Ayurveda,
+            pharmaceutical, and wellness products that promote healthier lives.
+            By combining traditional knowledge with modern quality standards,
+            we deliver safe, effective, and trusted healthcare solutions for
+            diverse wellness needs.
+        </p>
+
+        <div class="flex flex-col gap-4">
+            <div class="flex gap-4 items-center">
+            <div class="bg-tertiary p-2  rounded-full">
+                <Icon  name="lucide:shield" class="w-6 h-6 text-primary" class="w-12 h-12" />
+
+            </div>
+            <div class="flex flex-col justify-between">
+            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
+            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
+            </div>
+        </div>
+        <div class="flex gap-4 items-center">
+            <div class="bg-tertiary p-2  rounded-full">
+                <Icon  name="lucide:leaf" class="w-6 h-6 text-primary" class="w-12 h-12" />
+
+            </div>
+            <div class="flex flex-col justify-between">
+            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
+            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
+            </div>
+        </div>
+        <div class="flex gap-4 items-center">
+            <div class="bg-tertiary p-2  rounded-full">
+                <Icon  name="lucide:users-round" class="w-6 h-6 text-primary" class="w-12 h-12" />
+
+            </div>
+            <div class="flex flex-col justify-between">
+            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
+            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</section>
+</div>

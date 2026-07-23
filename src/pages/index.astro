@@ -1,10 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroBg from "../assets/heroimg-2048x1170.webp";
+import Stats from '../components/Stats.astro';
+import AboutusSection from '../components/AboutusSection.astro';
+import WhyChooseUsSection from '../components/WhyChooseUsSection.astro';
+import MedicalSolutionSection from '../components/MedicalSolutionSection.astro';
+import ManufacturingExcellenceSection from '../components/ManufacturingExcellenceSection.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	
+
+    <section 
+    style={`background-image: url(${heroBg.src})`}
+
+    class="w-full h-screen  relative  bg-cover bg-center">
+
+     <!-- Overlay -->
+  <div class="absolute  inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+        <div class="relative z-10 container mx-auto flex flex-col gap-4 h-full  justify-center text-white">
+
+           
+            <p class="annotation bg-secondary text-white"> CLINICAL NATURE</p>
+            <h1 class="text-white">Advancing Healthcare with <br />Precision and Nature</h1>
+            <p>
+                Bridging rigorous pharmaceutical science with botanical<br>
+                wisdom to deliver evidence-based wellness solutions for the<br>
+                modern world.
+            </p>
+            <div class="flex  mt-4 gap-4">
+                <a class="btn btn-primary">Explore Our Solutions</a>
+                <a class="btn btn-secondary bg-white text-black">Clinical Studies</a>
+            </div>
+        </div>
+
+       
+
+    </section>
+
+     <Stats />
+     
+
+     <AboutusSection />
+
+    <WhyChooseUsSection />
+
+    <MedicalSolutionSection />
+  
+    <ManufacturingExcellenceSection />
+  
+    
 </Layout>

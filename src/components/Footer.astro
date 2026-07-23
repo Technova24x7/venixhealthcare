@@ -1,0 +1,217 @@
+---
+import { company } from "../config/company";
+import { Icon } from "astro-icon/components";
+
+const quickLinks = [
+    { title: "Home", href: "/" },
+    { title: "About Us", href: "/about" },
+    { title: "Products", href: "/products" },
+    { title: "Manufacturing", href: "/manufacturing" },
+    { title: "Certifications", href: "/certifications" },
+    { title: "Contact", href: "/contact" },
+];
+---
+
+<footer class="bg-primary text-white pt-20">
+
+    <div class="container mx-auto px-6">
+
+        <div class="grid lg:grid-cols-12 gap-12">
+
+            <!-- Left -->
+
+            <div class="lg:col-span-5">
+
+                <!-- Logo -->
+
+                <a href="/" class="inline-block">
+
+                    <h2 class="text-3xl font-bold text-white">
+                        {company.logoText}
+                    </h2>
+
+                </a>
+
+                <p class="mt-6 text-white/70 leading-8 max-w-lg">
+                    {company.description}
+                </p>
+
+                <!-- Contact -->
+
+                <div class="mt-8 space-y-5">
+
+                    <div class="flex gap-4">
+
+                        <Icon
+                            name="lucide:map-pin"
+                            class="w-5 h-5 text-secondary shrink-0 mt-1"
+                        />
+
+                        <span class="text-white/70">
+                            {company.address}
+                        </span>
+
+                    </div>
+
+                    <div class="flex gap-4">
+
+                        <Icon
+                            name="lucide:phone"
+                            class="w-5 h-5 text-secondary shrink-0"
+                        />
+
+                        <a href={`tel:${company.phone}`}>
+
+                            {company.phone}
+
+                        </a>
+
+                    </div>
+
+                    <div class="flex gap-4">
+
+                        <Icon
+                            name="lucide:mail"
+                            class="w-5 h-5 text-secondary shrink-0"
+                        />
+
+                        <a href={`mailto:${company.email}`}>
+
+                            {company.email}
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Social -->
+
+                <div class="flex gap-4 mt-8">
+
+                    <a
+                        href={company.social.facebook}
+                        class="w-11 h-11 rounded-full bg-white/10 hover:bg-secondary transition flex items-center justify-center">
+
+                        <Icon name="lucide:facebook" />
+
+                    </a>
+
+                    <a
+                        href={company.social.instagram}
+                        class="w-11 h-11 rounded-full bg-white/10 hover:bg-secondary transition flex items-center justify-center">
+
+                        <Icon name="lucide:instagram" />
+
+                    </a>
+
+                    <a
+                        href={company.social.linkedin}
+                        class="w-11 h-11 rounded-full bg-white/10 hover:bg-secondary transition flex items-center justify-center">
+
+                        <Icon name="lucide:linkedin" />
+
+                    </a>
+
+                    <a
+                        href={company.social.youtube}
+                        class="w-11 h-11 rounded-full bg-white/10 hover:bg-secondary transition flex items-center justify-center">
+
+                        <Icon name="lucide:youtube" />
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Center -->
+
+            <div class="lg:col-span-2">
+
+                <h3 class="text-xl font-semibold mb-6">
+
+                    Quick Links
+
+                </h3>
+
+                <ul class="space-y-4">
+
+                    {
+                        quickLinks.map((link) => (
+
+                            <li>
+
+                                <a
+                                    href={link.href}
+                                    class="text-white/70 hover:text-secondary transition">
+
+                                    {link.title}
+
+                                </a>
+
+                            </li>
+
+                        ))
+                    }
+
+                </ul>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="lg:col-span-5">
+
+                <h3 class="text-xl font-semibold mb-6">
+
+                    Our Location
+
+                </h3>
+
+                <iframe
+                    src={company.mapEmbed}
+                    loading="lazy"
+                    allowfullscreen
+                    class="rounded-xl w-full h-[320px] border-0"
+                >
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+
+        <div
+            class="border-t border-white/10 mt-16 py-8 flex flex-col lg:flex-row justify-between items-center gap-6">
+
+            <div
+                class="flex flex-wrap justify-center lg:justify-start gap-3">
+
+                {
+                    company.certifications.map((item) => (
+
+                        <span
+                            class="px-4 py-2 rounded-full bg-white/10 text-sm">
+
+                            {item}
+
+                        </span>
+
+                    ))
+                }
+
+            </div>
+
+            <p class="text-white/60 text-sm text-center">
+
+                © {new Date().getFullYear()} {company.name}. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>

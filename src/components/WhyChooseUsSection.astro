@@ -1,0 +1,42 @@
+---
+import whyChooseUsImg from "../assets/why-choose-bg.png";
+import {Icon} from "astro-icon/components";
+---
+
+<div class="bg-cover bg-center py-20 " style={`background-image: url(${whyChooseUsImg.src})`}>
+    <section class="container mx-auto  flex flex-col items-center justify-center gap-4 py-20">
+
+        <div class="flex flex-col gap-4 items-center justify-center">
+            <h3 class="annotation text-xl flex items-center gap-2">
+                <Icon name="lucide:shield" class="text-primary w-6 h-6" />
+                TRUSTED WORLDWIDE</h3>
+            <h2 class="">Why Choose <span class="text-secondary"> Venix Global Care </span> </h2>
+            <p class="text-center">Our pillars of excellence ensure that every product leaving our facility meets the highest global standards of safety and efficacy.</p>
+        </div>
+
+        <div class="grid grid-cols-4 gap-12 mx-14 my-10">
+            <div class="flex flex-col gap-4 justify-start items-center card">
+                <Icon name="lucide:shield" class="text-primary w-16 h-16" />
+                <h3 class="text-2xl text-center">Precision  Biotech</h3>
+                <p class="text-center">Leveraging the latest biotechnology to develop highly targeted treatments with minimal side effects.</p>
+            </div>
+            <div class="flex flex-col gap-4 justify-start items-center card">
+                <Icon name="lucide:file-text" class="text-primary w-16 h-16" />
+                <h3 class="text-2xl text-center">Evidence  Based</h3>
+                <p class="text-center">Every formulation is backed by rigorous clinical trials and published scientific research data.</p>
+            </div>
+            <div class="flex flex-col gap-4 justify-start items-center card">
+                <Icon name="lucide:book-check" class="text-primary w-16 h-16" />
+                <h3 class="text-2xl text-center">Integrity chain</h3>
+                <p class="text-center">End-to-end supply chain transparency ensuring product authenticity and climate-controlled safety.</p>
+            </div>
+            <div class="flex flex-col gap-4 justify-start items-center card">
+                <Icon name="lucide:user" class="text-primary w-16 h-16" />
+                <h3 class="text-2xl text-center">Human Centric</h3>
+                <p class="text-center">A dedicated support system for medical professionals and patients to provide clarity and care.</p>
+            </div>
+        </div>
+        
+
+    </section>
+</div>

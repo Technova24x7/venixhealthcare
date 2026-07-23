@@ -28,6 +28,12 @@
 
 }
 
+@utility card-subtitle{
+
+    @apply text-lg text-text font-medium;
+
+}
+
 @utility btn{
 
     @apply inline-flex items-center justify-center rounded-full px-8 py-4 transition-all duration-300;
@@ -68,4 +74,8 @@
 
     @apply py-16;
 
+}
+
+@utility annotation{
+    @apply border border-secondary  w-fit px-4 rounded-full text-secondary tracking-wider ;
 }

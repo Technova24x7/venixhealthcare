@@ -1,0 +1,95 @@
+---
+import { Icon } from "astro-icon/components";
+import medicalSolutionImg from "../assets/medical-portfolio-bg.png";
+import ayurvedaImg from "../assets/ayurveda.webp";
+import homeopathyImg from "../assets/homeopathy.webp";
+import allopathyImg from "../assets/allopathy.webp";
+import { Image } from "astro:assets";
+import SmallCard from "./ui/SmallCard.astro";
+---
+
+<section
+    class="bg-cover bg-center py-20"
+    style={`background-image: url(${medicalSolutionImg.src})`}
+>
+    <div
+        class="container mx-auto flex flex-col gap-4 items-center justify-center py-20"
+    >
+        <h3 class="annotation text-xl flex items-center gap-2">
+            <Icon name="lucide:stethoscope" class="text-primary w-6 h-6" />
+            MEDICAL PORTFOLIO
+        </h3>
+        <h2>Our Medical Solutions</h2>
+        <p class="text-center">
+            Providing a spectrum of care through validated traditional systems
+            and modern scientific excellence.
+        </p>
+
+        <div class="grid grid-cols-4 gap-6">
+            <!-- Ayurveda -->
+            <div class="card col-span-2 flex flex-col gap-2">
+                <div class="h-80 overflow-hidden rounded-xl mb-6">
+                    <Image
+                        src={ayurvedaImg}
+                        alt="Ayurveda"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <h2 class="card-title">Ayurveda</h2>
+                <h3 class="card-subtitle">Nature Meets Modern Science</h3>
+                <p>
+                    Restoring biological balance through 5,000 years of
+                    plant-based intelligence refined by modern analytical
+                    chemistry.
+                </p>
+            </div>
+
+            <!-- Homeopathy -->
+            <div class="card col-span-1 flex flex-col gap-2">
+                <div class="h-80 overflow-hidden rounded-xl mb-6">
+                    <Image
+                        src={homeopathyImg}
+                        alt="Homeopathy"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <h2 class="card-title">Homeopathy</h2>
+                <h3 class="card-subtitle">Science of Similars</h3>
+                <p>
+                    Cutting-edge pharmaceutical research utilizing bio-inspired
+                    molecules to address complex healthcare challenges.
+                </p>
+            </div>
+
+            <!-- Allopathy -->
+            <div class="card col-span-1 flex flex-col gap-2">
+                <div class="h-80 overflow-hidden rounded-xl mb-6">
+                    <Image
+                        src={allopathyImg}
+                        alt="Allopathy"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <h2 class="card-title">Allopathy</h2>
+                <h3 class="card-subtitle">Science of Similars</h3>
+                <p>
+                    Cutting-edge pharmaceutical research utilizing bio-inspired
+                    molecules to address complex healthcare challenges.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-full flex justify-around bg-background p-12 rounded-xl my-12 ">
+            
+            <SmallCard title="150+" subtitle="Products" icon="lucide:package" />
+            <SmallCard title="100+" subtitle="Clinical Studies" icon="lucide:file-text" />
+            <SmallCard title="50+" subtitle="Countries" icon="lucide:globe" />
+            <SmallCard title="30+" subtitle="Years of Experience" icon="lucide:users" />
+            <SmallCard title="20+" subtitle="Awards" icon="lucide:award" />
+             
+        </div>
+    </div>
+</section>

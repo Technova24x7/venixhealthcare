@@ -1,0 +1,68 @@
+---
+import manufacturingImg from "../assets/manufacturing_excellence_bg.png";
+import { Icon } from "astro-icon/components";
+import Annotation from "./ui/Annotation.astro";
+import { Image } from "astro:assets";
+import whoGmpImg from "../assets/GMP_NEW.png";
+import isoImg from "../assets/ISO_NEW.png";
+import SmallCard from "./ui/SmallCard.astro";
+---
+
+<section
+class="bg-cover bg-center py-20"
+style={`background-image: url(${manufacturingImg.src})`}
+>
+
+    <div class="container mx-auto flex flex-col gap-4">
+        <Annotation title="MANUFACTURING EXCELLENCE" icon="lucide:factory" />
+
+        <h2 >
+            Manufacturing Excellence
+        </h2>
+        <p class="max-w-3xl">
+           Our state-of-the-art manufacturing facilities are designed to meet the highest international standards
+            of quality, safety, and operational excellence. Equipped with advanced production technologies and modern
+             quality control laboratories, we ensure that every formulation is manufactured with precision and consistency. From carefully sourced raw materials to final packaging, every stage of the manufacturing process follows strict WHO-GMP guidelines and internationally recognized quality management systems. Our commitment to innovation, compliance, and continuous improvement enables us to deliver healthcare solutions that healthcare professionals and patients can trust.
+        </p>
+
+       
+        <div class="flex bg-white p-6 w-fit md:min-w-[600px] rounded-xl gap-4 justify-around">
+
+            <div class="flex  gap-2 items-center justify-center">
+                <Image
+                    src={whoGmpImg}
+                    alt="Manufacturing Excellence"
+                    class="w-full h-auto max-w-[90px] rounded-xl object-cover"/>
+
+                <div class="flex flex-col gap-2">
+                    <h4 class="text-lg font-bold">WHO-GMP</h4>
+                    <p class="text-sm">CERTIFIED</p>
+                </div>
+            </div>
+             <div class="flex  gap-4 items-center justify-center">
+                <Image
+                    src={isoImg}
+                    alt="Manufacturing Excellence"
+                    class="w-full h-auto max-w-[90px] rounded-xl object-cover"/>
+
+                <div class="flex flex-col gap-2">
+                    <h4 class="text-lg font-bold">ISO CERTIFIED</h4>
+                    <p class="text-sm">9001:2015 | 22000:2018</p>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <div class="w-full flex justify-around bg-background p-12 rounded-xl my-12 ">
+            <SmallCard title="Advance Manufacturing"  icon="lucide:factory" />
+            <SmallCard title="Strict Quality Control"  icon="lucide:shield" />
+            <SmallCard title="Research & Development"  icon="lucide:microscope" />
+            <SmallCard title="International Standards"  icon="lucide:award" />
+            <SmallCard title="Global Reach"  icon="lucide:globe" />
+
+        </div>
+
+    </div>
+</section>
