@@ -1,10 +1,108 @@
-<div class="w-full border-b border-gray-300">
-    <nav class="container mx-auto flex justify-between items-center py-4">
-        <h3 class="text-xl font-bold">VinexHealthCare</h3>
-        <ul class="flex space-x-6">
-            <li class="font-"><a href="/">Home</a></li>
-            <li class="font-"><a href="/about">About</a></li>
-            <li class="font-"><a href="/contact">Contact</a></li>
+---
+import {Icon} from "astro-icon/components";
+
+const navLinks = [
+    {href:"/" , label:'Home'},
+    {href:"about",label:"About"},
+    {href:"products",label:"Products"},
+    {href:"manufacturing",label:"Manufacturing"},
+];
+---
+    <header
+  class="fixed top-0 left-0 z-50 w-full bg-white/10 backdrop-blur-md border-b border-white/10 transition-all duration-300 hidden lg:block"
+>
+<nav class="container mx-auto flex justify-between items-center py-5">
+        <h3 class="text-2xl font-bold flex  items-center gap-2 text-white ">
+            <Icon name="lucide:leaf" class="text-secondary w-10 h-10" />
+            VinexHealthCare</h3>
+        <ul class="flex space-x-6 gap-4 items-center">
+           
+       
+            {navLinks.map((item)=>(
+                <li class="font-priamary navlink">
+                <a
+                    href={item.href}
+                    class:list={[
+                        "group relative px-3 py-2 text-[15px] font-medium text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:text-secondary",
+                        Astro.url.pathname === item.href &&
+                            "text-secondary"
+                    ]}
+                >
+
+                    {item.label}
+
+                    <span
+                        class:list={[
+                            "absolute left-1/2 -bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-secondary transition-all duration-300 group-hover:w-full",
+                            Astro.url.pathname === item.href &&
+                                "w-full"
+                        ]}
+                    />
+
+                </a>
+           </li>
+            ))
+            
+            }
+
+            <li class="font-priamary navlink"><a class=" btn btn-primary rounded-xl" href="/contact">ContactUs</a></li>
+
+            
+
         </ul>
     </nav>
+
+</header>
+
+<div
+    class="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-2xl border border-white/20 bg-white/90 p-2 shadow-2xl backdrop-blur-xl md:hidden"
+>
+    {
+        navLinks.map((item) => (
+            <a
+                href={item.href}
+                class:list={[
+                    "flex flex-col items-center gap-1 rounded-xl px-4 py-2 text-xs font-medium transition-all duration-300",
+                    Astro.url.pathname === item.href
+                        ? "bg-secondary text-white"
+                        : "text-slate-700 hover:bg-slate-100"
+                ]}
+            >
+                <Icon
+                    name={
+                        item.label === "Home"
+                            ? "lucide:house"
+                            : item.label === "About"
+                            ? "lucide:building-2"
+                            : item.label === "Products"
+                            ? "lucide:package"
+                            : "lucide:factory"
+                    }
+                    class="h-5 w-5"
+                />
+
+                <span>{item.label}</span>
+            </a>
+        ))
+    }
+
+    <a
+        href="/contact"
+        class="flex flex-col items-center gap-1 rounded-xl bg-secondary px-4 py-2 text-xs font-medium text-white"
+    >
+        <Icon name="lucide:phone" class="h-5 w-5" />
+        <span>Contact</span>
+    </a>
 </div>
+    
+
+
+<script>
+    import gsap from "gsap";
+
+    gsap.from(".navlink",{
+        x:20,
+        opacity:100,
+        duration:.3
+    });
+</script>

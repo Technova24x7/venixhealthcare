@@ -19,15 +19,15 @@ import SmallCard from "./ui/SmallCard.astro";
             <Icon name="lucide:stethoscope" class="text-primary w-6 h-6" />
             MEDICAL PORTFOLIO
         </h3>
-        <h2>Our Medical Solutions</h2>
+        <h2 class="" >Our Medical Solutions</h2>
         <p class="text-center">
             Providing a spectrum of care through validated traditional systems
             and modern scientific excellence.
         </p>
 
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
             <!-- Ayurveda -->
-            <div class="card col-span-2 flex flex-col gap-2">
+            <div class="card col-span-1 lg:col-span-2 flex flex-col gap-2">
                 <div class="h-80 overflow-hidden rounded-xl mb-6">
                     <Image
                         src={ayurvedaImg}
@@ -82,14 +82,14 @@ import SmallCard from "./ui/SmallCard.astro";
             </div>
         </div>
 
-        <div class="w-full flex justify-around bg-background p-12 rounded-xl my-12 ">
+        <div class="w-full flex flex-wrap gap-6 justify-start  md:justify-around bg-background p-12 rounded-xl my-12 ">
             
-            <SmallCard title="150+" subtitle="Products" icon="lucide:package" />
-            <SmallCard title="100+" subtitle="Clinical Studies" icon="lucide:file-text" />
-            <SmallCard title="50+" subtitle="Countries" icon="lucide:globe" />
-            <SmallCard title="30+" subtitle="Years of Experience" icon="lucide:users" />
-            <SmallCard title="20+" subtitle="Awards" icon="lucide:award" />
-             
+            <SmallCard  title="150+" subtitle="Products" icon="lucide:package" />
+            <SmallCard  title="100+" subtitle="Clinical Studies" icon="lucide:file-text" />
+            <SmallCard  title="50+" subtitle="Countries" icon="lucide:globe" />
+            <SmallCard  title="20+" subtitle="Awards" icon="lucide:award" />
+           <SmallCard  title="30+" subtitle="Years of Experience" icon="lucide:users" />
+
         </div>
     </div>
 </section>

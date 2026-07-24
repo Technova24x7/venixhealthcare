@@ -13,7 +13,7 @@ class="bg-cover bg-center py-20"
 style={`background-image: url(${manufacturingImg.src})`}
 >
 
-    <div class="container mx-auto flex flex-col gap-4">
+    <div class="container mx-auto flex flex-col gap-4 px-4 lg:px-0">
         <Annotation title="MANUFACTURING EXCELLENCE" icon="lucide:factory" />
 
         <h2 >
@@ -26,7 +26,7 @@ style={`background-image: url(${manufacturingImg.src})`}
         </p>
 
        
-        <div class="flex bg-white p-6 w-fit md:min-w-[600px] rounded-xl gap-4 justify-around">
+        <div class="flex flex-wrap md:flex-nowrap bg-white p-6 w-fit md:min-w-[600px] rounded-xl gap-4 justify-start  md:justify-around">
 
             <div class="flex  gap-2 items-center justify-center">
                 <Image
@@ -55,7 +55,7 @@ style={`background-image: url(${manufacturingImg.src})`}
 
         
 
-        <div class="w-full flex justify-around bg-background p-12 rounded-xl my-12 ">
+        <div class="w-full flex flex-wrap lg:flex-nowrap justify-start gap-6 md:gap-0 md:justify-around bg-background p-12 rounded-xl my-12 ">
             <SmallCard title="Advance Manufacturing"  icon="lucide:factory" />
             <SmallCard title="Strict Quality Control"  icon="lucide:shield" />
             <SmallCard title="Research & Development"  icon="lucide:microscope" />

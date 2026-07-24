@@ -5,6 +5,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+    site:"https://lightseagreen-mosquito-321904.hostingersite.com/",
     integrations: [icon()],
     vite:{
         plugins:[tailwindcss()],
