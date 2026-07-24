@@ -81,8 +81,18 @@ const navLinks = [
                     class="h-5 w-5"
                 />
 
-                <span>{item.label}</span>
+                {
+                    Astro.url.pathname === item.href && (
+                        <span class="mt-1 text-[10px] font-medium">
+                            {item.label}
+                        </span>
+                    )
+                }
+
+                
             </a>
+
+            
         ))
     }
 
