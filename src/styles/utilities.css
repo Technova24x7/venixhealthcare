@@ -12,7 +12,7 @@
 
 @utility hero-title{
 
-    @apply text-6xl md:text-8xl font-bold;
+    @apply text-3xl md:text-7xl lg:text-8xl font-bold;
 
 }
 
@@ -36,7 +36,7 @@
 
 @utility btn{
 
-    @apply inline-flex items-center justify-center rounded-full px-8 py-4 transition-all duration-300;
+    @apply inline-flex items-center justify-center rounded-full px-1 py-2 md:px-8 md:py-4 transition-all duration-300;
 
 }
 

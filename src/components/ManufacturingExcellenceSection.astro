@@ -6,6 +6,16 @@ import { Image } from "astro:assets";
 import whoGmpImg from "../assets/GMP_NEW.png";
 import isoImg from "../assets/ISO_NEW.png";
 import SmallCard from "./ui/SmallCard.astro";
+import { icons } from "@iconify-json/lucide/index.js";
+
+const cardItems = [
+    {title:"Advance Manufacturing", subtitle:"State-of-the-art facilities with modern technology",icon:"lucide:factory"},
+    {title:"Strict Quality Control", subtitle:"Multi-level quality checks at every production stage",icon:"lucide:shield"},
+    {title:"Research & Development", subtitle:"Innovative formulations backed by scientific research",icon:"lucide:microscope"},
+    {title:"International Standards", subtitle:"Complaint with global regulatory standards",icon:"lucide:award"},
+    {title:"Global Reach", subtitle:"Exporting trusted products to 25+ countries",icon:"lucide:globe"}
+]
+
 ---
 
 <section
@@ -14,7 +24,7 @@ style={`background-image: url(${manufacturingImg.src})`}
 >
 
     <div class="container mx-auto flex flex-col gap-4 px-4 lg:px-0">
-        <Annotation title="MANUFACTURING EXCELLENCE" icon="lucide:factory" />
+        <Annotation title="MANUFACTURING EXCELLENCE" icon="none" />
 
         <h2 >
             Manufacturing Excellence
@@ -56,11 +66,12 @@ style={`background-image: url(${manufacturingImg.src})`}
         
 
         <div class="w-full flex flex-wrap lg:flex-nowrap justify-start gap-6 md:gap-0 md:justify-around bg-background p-12 rounded-xl my-12 ">
-            <SmallCard title="Advance Manufacturing"  icon="lucide:factory" />
-            <SmallCard title="Strict Quality Control"  icon="lucide:shield" />
-            <SmallCard title="Research & Development"  icon="lucide:microscope" />
-            <SmallCard title="International Standards"  icon="lucide:award" />
-            <SmallCard title="Global Reach"  icon="lucide:globe" />
+
+            {
+                cardItems.map((item)=>( <SmallCard title={item.title} subtitle={item.subtitle}  icon={item.icon} />))
+            }
+            
+          
 
         </div>
 

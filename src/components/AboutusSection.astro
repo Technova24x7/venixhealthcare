@@ -2,10 +2,26 @@
 import { Image } from "astro:assets";
 import aboutUsImg from "../assets/aboutus_section.webp";
 import { Icon } from "astro-icon/components";
+import SmallCard from "./ui/SmallCard.astro";
+import Annotation from "./ui/Annotation.astro";
+
+const cardItems = [
+    {title:"Quality Assured HealthCare Products" , subtitle:"Strict quality checks at every step to ensure safety and efficacy." , icon:"lucide:shield"},
+    {title:"Ayurvedic & Nutraceutical Expertise" , subtitle:"Rooted in Ayurveda, powered by modern science and research." , icon:"lucide:leaf"},
+    {title:"Trusted by Healthcare Professionals" , subtitle:"Preferred by doctors, partners,and customers across the globe." , icon:"lucide:users-round"},
+    
+]
 ---
-<div class="bg-background">
-<section class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-20 ">
-    <div>
+<div class="bg-background flex flex-col justify-center items-center mt-12">
+    <div class="mt-12">
+            <Annotation  title="AboutUs" icon="none"/>
+
+    </div>
+<section class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-10 lg:py-20">
+
+        
+
+    <div class="mx-6 lg:mx-0">
         <Image
             src={aboutUsImg}
             alt="About Us"
@@ -13,13 +29,12 @@ import { Icon } from "astro-icon/components";
         />
     </div>
 
-    <div class="flex flex-col gap-4 px-4">
-        <p class="annotation ">ABOUT US</p>
 
-        <h2 class="text-primary  text-4xl">
-            Healthcare Innovation
-            <br />
-            Rooted in Nature
+    <div class="flex flex-col gap-4 px-4 mx-6 lg:mx-0">
+       
+
+        <h2 class="text-primary">
+            Healthcare Innovation Rooted in <span class="text-secondary">Nature</span> 
         </h2>
 
         <p>
@@ -31,36 +46,10 @@ import { Icon } from "astro-icon/components";
         </p>
 
         <div class="flex flex-col gap-8 mt-6 md:mt-0 md:gap-4">
-            <div class="flex gap-4 items-center">
-            <div class="bg-tertiary p-2  rounded-full">
-                <Icon  name="lucide:shield" class="w-6 h-6 text-primary" class="w-12 h-12" />
 
-            </div>
-            <div class="flex flex-col justify-between">
-            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
-            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
-            </div>
-        </div>
-        <div class="flex gap-4 items-center">
-            <div class="bg-tertiary p-2  rounded-full">
-                <Icon  name="lucide:leaf" class="w-6 h-6 text-primary" class="w-12 h-12" />
-
-            </div>
-            <div class="flex flex-col justify-between">
-            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
-            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
-            </div>
-        </div>
-        <div class="flex gap-4 items-center">
-            <div class="bg-tertiary p-2  rounded-full">
-                <Icon  name="lucide:users-round" class="w-6 h-6 text-primary" class="w-12 h-12" />
-
-            </div>
-            <div class="flex flex-col justify-between">
-            <h3 class="text-xl ">Quality Assured HealthCare Products</h3>
-            <p class="text-sm">Strict quality checks at every step to ensure safety and efficacy.</p>
-            </div>
-        </div>
+            {
+                cardItems.map((item)=>( <SmallCard title={item.title}    subtitle={item.subtitle}   icon={item.icon} />))
+            }
         
         </div>
     </div>
