@@ -1,46 +1,152 @@
-# Astro Starter Kit: Basics
+# 🏥 Venix HealthCare
 
-```sh
-npm create astro@latest -- --template basics
+A modern healthcare website built with **Astro**, **Tailwind CSS**, and **GSAP**, focused on performance, accessibility, and a smooth user experience.
+
+---
+
+## ✨ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| ⚡ Astro | Static Site Framework |
+| 🎨 Tailwind CSS | Utility-first CSS Framework |
+| 🎬 GSAP | Animations |
+| 🎯 Astro Icon | Icon Management |
+| 🔤 Lucide Icons | Beautiful SVG Icons |
+
+---
+
+## 🎨 Typography
+
+| Font | Usage |
+|------|-------|
+| **Poppins** | Headings |
+| **Inter** | Body Text |
+
+---
+
+## 🎨 Color Palette
+
+| Color | Hex |
+|-------|-----|
+| **Primary** | `#1A4F8B` |
+| **Secondary** | `#4C7238` |
+| **Tertiary** | `#D8E0BB` |
+| **Background** | `#F5F1E6` |
+| **Text** | `#FFFFFF` |
+
+### CSS Variables
+
+```css
+:root {
+  --color-primary: #1a4f8b;
+  --color-secondary: #4c7238;
+  --color-tertiary: #d8e0bb;
+  --color-background: #f5f1e6;
+  --color-text: #ffffff;
+}
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
 /
 ├── public/
+│   ├── images/
+│   ├── icons/
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── styles/
+│   ├── lib/
+│   └── utils/
+│
+├── astro.config.mjs
+├── package.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🚀 Getting Started
 
-All commands are run from the root of the project, from a terminal:
+### Install Dependencies
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm install
+```
 
-## 👀 Want to learn more?
+### Start Development Server
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:4321
+```
+
+---
+
+## 📜 Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the project for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro` | Run Astro CLI commands |
+| `npm run astro -- --help` | Show Astro CLI help |
+
+---
+
+## ⚡ Features
+
+- ✅ Fast static site generation with Astro
+- ✅ Responsive design
+- ✅ Modern UI with Tailwind CSS
+- ✅ Smooth GSAP animations
+- ✅ Lucide icons via Astro Icon
+- ✅ Clean and maintainable component structure
+- ✅ SEO-friendly architecture
+
+---
+
+## 📦 Build
+
+Create a production build with:
+
+```bash
+npm run build
+```
+
+The generated files will be available inside:
+
+```text
+dist/
+```
+
+---
+
+## 👨‍💻 Development
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📄 License
+
+This project is developed for **Venix HealthCare**.
