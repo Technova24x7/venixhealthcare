@@ -1,0 +1,207 @@
+---
+import Annotation from "../components/ui/Annotation.astro";
+import Layout from "../layouts/Layout.astro";
+
+import heroBg from "../assets/about_us_bg.png";
+import HeroSection from "../components/HeroSection.astro";
+import SmallCard from "../components/ui/SmallCard.astro";
+const heroTitle = " Rooted in Nature Driven by Science";
+const heroSubtitle = `At VenixHealthCare, we Belive the future of healthcare lies
+                    in the perfect harmony between nature and science We combine
+                    the wisdom of botanicals with rigorus pharmaceutical
+                    research to create safe, effective and sustainable wellness
+                    solutions.`;
+const heroAnnotation = "About";
+const heroCta = { title: "OurStory", href: "/story" };
+const companyValues = [
+    {
+        title: "Integrity",
+        subtitle: "We uphold the highest standards in everything we do.",
+        icon: "lucide:shield-check",
+    },
+    {
+        title: "Innovation",
+        subtitle: "We invest in research to bring breakthrough solutions.",
+        icon: "lucide:flask-round",
+    },
+    {
+        title: "Sustainability",
+        subtitle: "We care for the planet as much as we care for people.",
+        icon: "lucide:leaf",
+    },
+    {
+        title: "Compassion",
+        subtitle: "We put patient well-being at the heart of our mission.",
+        icon: "lucide:heart-handshake",
+    },
+];
+
+const coreValues = [
+    {
+        title: "Science First",
+        subtitle:
+            "Every product begins with extensive research, scientific validation, and continuous innovation.",
+        icon: "lucide:flask-round",
+    },
+    {
+        title: "Quality Without Compromise",
+        subtitle:
+            "We follow rigorous quality assurance processes to ensure consistency, safety, and regulatory compliance.",
+        icon: "lucide:shield-check",
+    },
+    {
+        title: "Integrity",
+        subtitle:
+            "We build long-term relationships through transparency, honesty, and ethical business practices.",
+        icon: "lucide:handshake",
+    },
+    {
+        title: "Sustainability",
+        subtitle:
+            "Responsible sourcing and environmentally conscious manufacturing remain central to our growth.",
+        icon: "lucide:leaf",
+    },
+    {
+        title: "Patient-Centric Innovation",
+        subtitle:
+            "Every decision is made with one goal in mind—improving patient outcomes and overall well-being.",
+        icon: "lucide:heart-pulse",
+    },
+    {
+        title: "Continuous Improvement",
+        subtitle:
+            "Healthcare continues to evolve, and so do we through research, technology, and innovation.",
+        icon: "lucide:trending-up",
+    },
+];
+---
+
+<Layout>
+    <HeroSection
+        title={heroTitle}
+        subtitle={heroSubtitle}
+        annotation={heroAnnotation}
+        cta={heroCta}
+        bg={heroBg}
+    />
+
+    <section>
+        <div
+            class="w-full px-4 xl:px-0 gap-6 xl:gap-24 lg:container md:mx-auto grid grid-cols-1 xl:grid-cols-2 my-12 lg:my-24"
+        >
+            <div class="flex flex-col gap-6">
+                <div class="relative">
+                    <h4 class="pb-1">Our Value</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    {
+                        companyValues.map((item) => (
+                            <div class="shadow-xl p-8">
+                                <SmallCard
+                                    title={item.title}
+                                    subtitle={item.subtitle}
+                                    icon={item.icon}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="col-span-1 flex flex-col gap-6">
+                <div class="">
+                    <Annotation title="OUR MISSION" icon="none" />
+                </div>
+                <h3>Empowering Health, Enriching Lives.</h3>
+                <p>
+                    To develop safe, effective, and research-driven healthcare
+                    products by combining advanced pharmaceutical expertise with
+                    responsibly sourced natural ingredients, ensuring excellence
+                    from research to patient care.
+                </p>
+
+                <p>Founded & CEO, VenixHealthCare</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4">
+            <div class="flex flex-col gap-4 md:p-12 ">
+            
+            <div class="relative">
+                    <h4 class="pb-1">Our Story</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+
+            <h3>A Journey Towards Better Healthcare</h3>
+
+            <p class="">
+                Every breakthrough begins with a purpose. VenixHealthCare was
+                founded with a simple yet ambitious vision—to bridge the gap
+                between traditional botanical knowledge and modern scientific
+                innovation. We recognized that patients and healthcare
+                professionals deserve solutions that are not only effective but
+                also backed by rigorous research, uncompromising quality
+                standards, and ethical manufacturing practices. This vision
+                continues to guide every product we develop and every
+                partnership we build. Today, our multidisciplinary team of
+                researchers, pharmacists, and healthcare professionals works
+                together to develop solutions that promote healthier lives
+                across communities around the world.
+            </p>
+            </div>
+
+            <div class="flex flex-col gap-4 md:p-12 ">
+                <div class="relative">
+                    <h4 class="pb-1">Our Experties</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+            
+            <h3>Building Healthcare Solutions for a Better Tomorrow</h3>
+            <p>
+                Our expertise spans pharmaceutical formulation, botanical
+                research, nutraceutical development, contract manufacturing, and
+                quality assurance. By integrating modern laboratory technologies
+                with internationally recognized manufacturing standards, we
+                consistently deliver healthcare products trusted by
+                professionals and consumers alike. Whether developing innovative
+                formulations or supporting partners through contract
+                manufacturing, we remain committed to excellence at every stage
+                of the process.
+            </p>
+        </div>
+        </div>
+
+        
+    </section>
+
+    <section>
+        <div class="mx-4 my-12 lg:container lg:mx-auto flex flex-col gap-6 mb-24">
+            <div class="relative">
+                    <h4 class="pb-1">Our Core Value</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    coreValues.map((item) => (
+                        <div class="shadow-xl p-8">
+                            <SmallCard
+                                title={item.title}
+                                subtitle={item.subtitle}
+                                icon={item.icon}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    
+</Layout>

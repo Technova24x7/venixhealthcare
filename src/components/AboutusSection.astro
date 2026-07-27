@@ -5,6 +5,11 @@ import { Icon } from "astro-icon/components";
 import SmallCard from "./ui/SmallCard.astro";
 import Annotation from "./ui/Annotation.astro";
 
+const paraText =  `Vinex Healthcare is dedicated to developing high-quality Ayurvedic, 
+pharmaceutical, and wellness products that promote healthier lives. By combining traditional
+ knowledge with modern quality standards, we deliver safe, effective, and trusted healthcare 
+ solutions for every patient's needs.`;
+
 const cardItems = [
     {title:"Quality Assured HealthCare Products" , subtitle:"Strict quality checks at every step to ensure safety and efficacy." , icon:"lucide:shield"},
     {title:"Ayurvedic & Nutraceutical Expertise" , subtitle:"Rooted in Ayurveda, powered by modern science and research." , icon:"lucide:leaf"},
@@ -38,11 +43,7 @@ const cardItems = [
         </h2>
 
         <p>
-            Venix Healthcare is dedicated to developing high-quality Ayurveda,
-            pharmaceutical, and wellness products that promote healthier lives.
-            By combining traditional knowledge with modern quality standards,
-            we deliver safe, effective, and trusted healthcare solutions for
-            diverse wellness needs.
+            {paraText}
         </p>
 
         <div class="flex flex-col gap-8 mt-6 md:mt-0 md:gap-4">
