@@ -1,10 +1,702 @@
 ---
+import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
+import heroBg from "../assets/product_page_bg.png";
+import qualityImg from "../assets/qualityImg.png";
+import Image from "astro/components/Image.astro";
+const heroTitle = "Innovative Healthcare Solutions for Every Stage of Wellness";
+const heroSubtitle = `From evidence-based pharmaceuticals to nature-inspired wellness products, our diverse portfolio is 
+developed through advanced research, rigorous quality standards, and a commitment to improving lives.`;
+import { Icon } from "astro-icon/components";
+const cta = { href: "/", title: "Explore Products" };
+const annotation = "PRODUCTS";
+
+const productRange = [
+    {
+        title: "Immune Health",
+        description:
+            "Advanced formulations designed to strengthen natural immunity and support long-term wellness.",
+        icon: "lucide:shield-plus",
+    },
+    {
+        title: "Digestive Wellness",
+        description:
+            "Evidence-based solutions that promote digestive comfort, nutrient absorption, and gut health.",
+        icon: "lucide:pill",
+    },
+    {
+        title: "Women's Health",
+        description:
+            "Comprehensive healthcare products supporting women's wellness through every stage of life.",
+        icon: "lucide:heart-pulse",
+    },
+    {
+        title: "Men's Health",
+        description:
+            "Targeted formulations developed to promote vitality, strength, and overall well-being.",
+        icon: "lucide:user-round",
+    },
+    {
+        title: "Children's Care",
+        description:
+            "Safe and carefully formulated healthcare solutions designed specifically for growing children.",
+        icon: "lucide:baby",
+    },
+    {
+        title: "Cardiovascular Support",
+        description:
+            "Research-driven products that help maintain cardiovascular health and healthy circulation.",
+        icon: "lucide:heart",
+    },
+    {
+        title: "Pain Management",
+        description:
+            "Reliable pharmaceutical solutions developed to provide effective pain relief and recovery support.",
+        icon: "lucide:cross",
+    },
+    {
+        title: "Respiratory Care",
+        description:
+            "Innovative formulations that support healthy breathing and respiratory wellness.",
+        icon: "lucide:stethoscope",
+    },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Research",
+    icon: "lucide:microscope",
+    description:
+      "Our scientific team identifies emerging healthcare needs and researches innovative solutions backed by the latest advancements.",
+  },
+  {
+    step: "02",
+    title: "Formulation",
+    icon: "lucide:flask-conical",
+    description:
+      "Every formulation is carefully developed using premium ingredients to ensure optimal safety, stability, and effectiveness.",
+  },
+  {
+    step: "03",
+    title: "Testing",
+    icon: "lucide:test-tube",
+    description:
+      "Products undergo comprehensive laboratory analysis and quality testing to verify purity, consistency, and performance.",
+  },
+  {
+    step: "04",
+    title: "Manufacturing",
+    icon: "lucide:factory",
+    description:
+      "Advanced manufacturing processes ensure precision, consistency, and compliance with internationally recognized standards.",
+  },
+  {
+    step: "05",
+    title: "Quality Assurance",
+    icon: "lucide:shield-check",
+    description:
+      "Every batch passes multiple quality inspections before reaching healthcare professionals and consumers.",
+  },
+];
+
+const features = [
+  {
+    icon: "lucide:leaf",
+    title: "Premium Ingredients",
+    description:
+      "We carefully source high-quality ingredients to ensure purity, consistency, and exceptional product performance.",
+  },
+  {
+    icon: "lucide:microscope",
+    title: "Research Driven",
+    description:
+      "Every formulation is backed by scientific research, innovation, and a commitment to continuous improvement.",
+  },
+  {
+    icon: "lucide:factory",
+    title: "Advanced Manufacturing",
+    description:
+      "Modern manufacturing facilities and precision processes ensure reliable quality in every batch.",
+  },
+  {
+    icon: "lucide:shield-check",
+    title: "Strict Quality Control",
+    description:
+      "Every product undergoes multiple quality inspections to meet rigorous safety and performance standards.",
+  },
+  {
+    icon: "lucide:globe",
+    title: "Global Standards",
+    description:
+      "Our operations follow internationally recognized manufacturing and quality management practices.",
+  },
+  {
+    icon: "lucide:handshake",
+    title: "Trusted Partnerships",
+    description:
+      "Healthcare professionals, distributors, and partners rely on VenixHealthCare for dependable healthcare solutions.",
+  },
+];
+
+const certifications = [
+  {
+    icon: "lucide:badge-check",
+    title: "WHO-GMP Compliance",
+    description:
+      "Manufactured in facilities that follow World Health Organization Good Manufacturing Practices for quality, safety, and consistency.",
+  },
+  {
+    icon: "lucide:award",
+    title: "ISO Certified",
+    description:
+      "Quality management systems designed to maintain operational excellence and continuous improvement across every process.",
+  },
+  {
+    icon: "lucide:shield-check",
+    title: "Quality Tested",
+    description:
+      "Every batch undergoes comprehensive laboratory testing to ensure purity, stability, and product performance.",
+  },
+  {
+    icon: "lucide:file-check",
+    title: "Regulatory Compliance",
+    description:
+      "Products are developed in accordance with applicable national and international pharmaceutical regulations.",
+  },
+];
 ---
 
 <Layout>
-
-    <div>
-        <h2>Products Page</h2>
+    <div class="flex h-screen">
+        <HeroSection
+            title={heroTitle}
+            subtitle={heroSubtitle}
+            bg={heroBg}
+            cta={cta}
+            annotation={annotation}
+        />
     </div>
+
+    <section class="section">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="annotation mx-auto">FEATURED PRODUCT RANGE</p>
+
+                <h2>Trusted Solutions Across Every Healthcare Need</h2>
+
+                <p>
+                    Our diverse portfolio is designed to support a wide spectrum
+                    of healthcare requirements through scientifically formulated
+                    products that meet international quality standards.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {
+                    productRange.map((item) => (
+                        <article class="rounded-3xl border border-black/5 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10">
+                                <Icon
+                                    name={item.icon}
+                                    class="w-8 h-8 text-secondary"
+                                />
+                            </div>
+
+                            <h3 class="mb-3">{item.title}</h3>
+
+                            <p class="mb-6">{item.description}</p>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section bg-gradient-to-b from-white to-background/30">
+    <div class="container mx-auto">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Content -->
+            <div>
+
+                <p class="annotation">
+                    QUALITY PROMISE
+                </p>
+
+                <h2 class="mt-4">
+                    Excellence in Every Formulation
+                </h2>
+
+                <p class="mt-6">
+                    Every VenixHealthCare product is developed with an
+                    uncompromising commitment to quality, safety, and
+                    scientific integrity. From carefully selected raw materials
+                    to rigorous laboratory testing and modern manufacturing,
+                    every formulation reflects our pursuit of excellence.
+                </p>
+
+                <p class="mt-6">
+                    Our quality assurance processes ensure every product
+                    consistently meets international standards, delivering
+                    reliable healthcare solutions trusted by professionals,
+                    partners, and consumers alike.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-5 mt-10">
+
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                            <Icon
+                                name="lucide:leaf"
+                                class="w-6 h-6 text-secondary"
+                            />
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold">
+                                Premium Ingredients
+                            </h3>
+
+                            <p class="text-sm mt-1">
+                                Responsibly sourced raw materials selected for purity and consistency.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                            <Icon
+                                name="lucide:microscope"
+                                class="w-6 h-6 text-secondary"
+                            />
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold">
+                                Scientific Research
+                            </h3>
+
+                            <p class="text-sm mt-1">
+                                Every formulation is backed by extensive research and innovation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                            <Icon
+                                name="lucide:flask-conical"
+                                class="w-6 h-6 text-secondary"
+                            />
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold">
+                                Rigorous Testing
+                            </h3>
+
+                            <p class="text-sm mt-1">
+                                Multi-stage quality control ensures safety, purity, and effectiveness.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                            <Icon
+                                name="lucide:shield-check"
+                                class="w-6 h-6 text-secondary"
+                            />
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold">
+                                Global Standards
+                            </h3>
+
+                            <p class="text-sm mt-1">
+                                Manufactured in compliance with internationally recognized quality systems.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+            <div class="relative">
+
+                <Image
+                    src={qualityImg}
+                    alt="Quality Assurance"
+                    class="rounded-[2rem] object-cover w-full h-[600px]"
+                />
+
+                <div class="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
+
+                    <p class="text-secondary font-semibold">
+                        Quality You Can Trust
+                    </p>
+
+                    <p class="text-sm mt-2">
+                        Every batch undergoes comprehensive inspection before
+                        reaching healthcare professionals and patients.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section bg-white">
+    <div class="container mx-auto">
+
+        <!-- Heading -->
+
+        <div class="mx-auto max-w-3xl text-center">
+
+            <p class="annotation mx-auto">
+                FROM CONCEPT TO CARE
+            </p>
+
+            <h2 class="mt-4">
+                Product Development Process
+            </h2>
+
+            <p class="mt-6">
+                Every VenixHealthCare formulation follows a carefully managed
+                development process that combines scientific research,
+                innovative formulation, precision manufacturing, and rigorous
+                quality assurance to deliver healthcare solutions you can trust.
+            </p>
+
+        </div>
+
+        <!-- Timeline -->
+
+        <div class="relative mt-20">
+
+            <!-- Connecting line -->
+
+            <div
+                class="absolute left-0 right-0 top-10 hidden lg:block h-0.5 bg-secondary/20"
+            />
+
+            <div class="grid gap-8 lg:grid-cols-5">
+
+                {
+                    process.map((item) => (
+                        <div class="relative text-center">
+
+                            <!-- Circle -->
+
+                            <div
+                                class="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-full border-8 border-white bg-secondary   shadow-lg"
+                            >
+                                <Icon
+                                    name={item.icon}
+                                    class="h-9 w-9"
+                                />
+                            </div>
+
+                            <!-- Step -->
+
+                            <span
+                                class="mt-6 inline-block rounded-full bg-secondary/10 px-4 py-1 text-sm font-semibold text-secondary"
+                            >
+                                Step {item.step}
+                            </span>
+
+                            <!-- Card -->
+
+                            <div
+                                class="mt-5 rounded-3xl border border-black/5 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            >
+
+                                <h3 class="mb-3">
+                                    {item.title}
+                                </h3>
+
+                                <p class="text-sm leading-7">
+                                    {item.description}
+                                </p>
+
+                            </div>
+
+                        </div>
+                    ))
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section bg-background/40">
+    <div class="container mx-auto">
+
+        <!-- Heading -->
+
+        <div class="mx-auto max-w-3xl text-center">
+
+            <p class="annotation mx-auto">
+                WHY VENIXHEALTHCARE
+            </p>
+
+            <h2 class="mt-4">
+                Why Choose Our Products
+            </h2>
+
+            <p class="mt-6">
+                At VenixHealthCare, every product is developed with an unwavering
+                commitment to quality, innovation, and patient well-being.
+                Our focus on scientific excellence and responsible manufacturing
+                enables us to deliver healthcare solutions trusted by professionals
+                and consumers alike.
+            </p>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            {
+                features.map((item) => (
+
+                    <div
+                        class="group rounded-3xl border border-black/5 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/20 hover:shadow-xl"
+                    >
+
+                        <!-- Icon -->
+
+                        <div
+                            class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 transition-colors duration-300 group-hover:bg-secondary"
+                        >
+                            <Icon
+                                name={item.icon}
+                                class="h-8 w-8 text-secondary transition-colors duration-300 group-hover: "
+                            />
+                        </div>
+
+                        <!-- Title -->
+
+                        <h3 class="mb-4">
+                            {item.title}
+                        </h3>
+
+                        <!-- Description -->
+
+                        <p class="leading-7">
+                            {item.description}
+                        </p>
+
+                    </div>
+
+                ))
+            }
+
+            
+
+        </div>
+
+        <div class="mt-16 rounded-[2rem] bg-secondary px-10 py-12 text-center text-white">
+
+    <h3 class="text-3xl font-semibold">
+        Trusted by Healthcare Professionals
+    </h3>
+
+    <p class="mx-auto mt-4 max-w-3xl text-white/80">
+        Every VenixHealthCare product reflects our dedication to scientific
+        excellence, responsible manufacturing, and uncompromising quality,
+        helping improve health outcomes across diverse therapeutic areas.
+    </p>
+
+</div>
+
+    </div>
+</section>
+
+<section class="section bg-background/30">
+
+    <div class="container mx-auto">
+
+        <!-- Heading -->
+
+        <div class="mx-auto max-w-3xl text-center">
+
+            <p class="annotation mx-auto">
+                QUALITY & COMPLIANCE
+            </p>
+
+            <h2 class="mt-4">
+                Certified for Excellence
+            </h2>
+
+            <p class="mt-6">
+                Quality is at the heart of everything we do. Our manufacturing
+                processes, testing protocols, and operational standards are
+                designed to meet internationally recognized quality benchmarks,
+                ensuring every product delivers safety, consistency, and
+                reliability.
+            </p>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+            {
+                certifications.map((item) => (
+
+                    <div
+                        class="rounded-3xl border border-black/5 bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                    >
+
+                        <div
+                            class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10"
+                        >
+                            <Icon
+                                name={item.icon}
+                                class="h-8 w-8 text-secondary"
+                            />
+                        </div>
+
+                        <h3 class="mb-4">
+                            {item.title}
+                        </h3>
+
+                        <p class="text-sm leading-7">
+                            {item.description}
+                        </p>
+
+                    </div>
+
+                ))
+            }
+
+        </div>
+
+        <!-- Trust Banner -->
+
+        <div
+            class="mt-20 rounded-[2rem] bg-secondary px-10 py-12 text-center text-white"
+        >
+
+            <h3 class="text-3xl font-semibold">
+                Quality Without Compromise
+            </h3>
+
+            <p class="mx-auto mt-5 max-w-3xl text-white/80 leading-8">
+                From raw material sourcing to final product release, every stage
+                of our manufacturing process is governed by strict quality
+                assurance protocols. Our commitment to compliance ensures that
+                healthcare professionals and consumers can trust every
+                VenixHealthCare product with confidence.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section relative overflow-hidden bg-background">
+
+    <!-- Background Pattern -->
+
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_35%)]"
+    />
+
+    <div class="container mx-auto relative z-10">
+
+        <div class="mx-auto max-w-4xl text-center ">
+
+            <p class="annotation mx-auto border-white/20 bg-white/10 ">
+                PARTNER WITH VENIXHEALTHCARE
+            </p>
+
+            <h2 class="mt-6 ">
+                Let's Build a Healthier Tomorrow Together
+            </h2>
+
+            <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 ">
+                Whether you're looking for trusted pharmaceutical products,
+                contract manufacturing solutions, or a long-term healthcare
+                partner, VenixHealthCare is committed to delivering innovative,
+                high-quality solutions that improve lives and create lasting
+                value.
+            </p>
+
+            <!-- Trust Points -->
+
+            <div
+                class="mt-12 flex flex-wrap justify-center gap-6 text-sm font-medium "
+            >
+
+                <div class="flex items-center gap-2">
+                    <Icon
+                        name="lucide:badge-check"
+                        class="h-5 w-5 text-secondary"
+                    />
+                    <span>Premium Quality</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <Icon
+                        name="lucide:shield-check"
+                        class="h-5 w-5 text-secondary"
+                    />
+                    <span>International Standards</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <Icon
+                        name="lucide:handshake"
+                        class="h-5 w-5 text-secondary"
+                    />
+                    <span>Trusted Partnerships</span>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div
+                class="mt-12 flex flex-col justify-center gap-4 sm:flex-row"
+            >
+
+                <a
+                    href="/contact"
+                    class="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-4 font-semibold text-white transition hover:scale-105 hover:shadow-xl"
+                >
+                    Contact Our Team
+                </a>
+
+                <a
+                    href="/about"
+                    class="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 font-semibold   transition hover:bg-white hover:text-primary"
+                >
+                    Learn More About Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 </Layout>

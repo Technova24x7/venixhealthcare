@@ -5,6 +5,8 @@ import Layout from "../layouts/Layout.astro";
 import heroBg from "../assets/about_us_bg.png";
 import HeroSection from "../components/HeroSection.astro";
 import SmallCard from "../components/ui/SmallCard.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 const heroTitle = " Rooted in Nature Driven by Science";
 const heroSubtitle = `At VenixHealthCare, we Belive the future of healthcare lies
                     in the perfect harmony between nature and science We combine
@@ -85,13 +87,13 @@ const coreValues = [
         bg={heroBg}
     />
 
-    <section>
+    <section class="">
         <div
             class="w-full px-4 xl:px-0 gap-6 xl:gap-24 lg:container md:mx-auto grid grid-cols-1 xl:grid-cols-2 my-12 lg:my-24"
         >
             <div class="flex flex-col gap-6">
                 <div class="relative">
-                    <h4 class="pb-1">Our Value</h4>
+                    <h4 class="pb-2">Our Value</h4>
                     <span class="absolute bottom-0 bg-secondary w-16 h-1"
                     ></span>
                 </div>
@@ -126,66 +128,110 @@ const coreValues = [
         </div>
     </section>
 
-    <section>
-        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4">
-            <div class="flex flex-col gap-4 md:p-12 ">
-            
-            <div class="relative">
-                    <h4 class="pb-1">Our Story</h4>
+    <section class="bg-background">
+        <div
+            class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 py-6 md:py-0"
+        >
+            <div class="flex flex-col gap-4 md:p-12">
+                <div class="relative">
+                    <h4 class="pb-2">Our Story</h4>
                     <span class="absolute bottom-0 bg-secondary w-16 h-1"
                     ></span>
                 </div>
 
-            <h3>A Journey Towards Better Healthcare</h3>
+                <h3>A Journey Towards Better Healthcare</h3>
 
-            <p class="">
-                Every breakthrough begins with a purpose. VenixHealthCare was
-                founded with a simple yet ambitious vision—to bridge the gap
-                between traditional botanical knowledge and modern scientific
-                innovation. We recognized that patients and healthcare
-                professionals deserve solutions that are not only effective but
-                also backed by rigorous research, uncompromising quality
-                standards, and ethical manufacturing practices. This vision
-                continues to guide every product we develop and every
-                partnership we build. Today, our multidisciplinary team of
-                researchers, pharmacists, and healthcare professionals works
-                together to develop solutions that promote healthier lives
-                across communities around the world.
-            </p>
+                <p class="">
+                    Every breakthrough begins with a purpose. VenixHealthCare
+                    was founded with a simple yet ambitious vision—to bridge the
+                    gap between traditional botanical knowledge and modern
+                    scientific innovation. We recognized that patients and
+                    healthcare professionals deserve solutions that are not only
+                    effective but also backed by rigorous research,
+                    uncompromising quality standards, and ethical manufacturing
+                    practices. This vision continues to guide every product we
+                    develop and every partnership we build. Today, our
+                    multidisciplinary team of researchers, pharmacists, and
+                    healthcare professionals works together to develop solutions
+                    that promote healthier lives across communities around the
+                    world.
+                </p>
             </div>
 
-            <div class="flex flex-col gap-4 md:p-12 ">
+            <div class="flex flex-col gap-4 md:p-12">
                 <div class="relative">
-                    <h4 class="pb-1">Our Experties</h4>
+                    <h4 class="pb-2">Our Experties</h4>
                     <span class="absolute bottom-0 bg-secondary w-16 h-1"
                     ></span>
                 </div>
-            
-            <h3>Building Healthcare Solutions for a Better Tomorrow</h3>
-            <p>
-                Our expertise spans pharmaceutical formulation, botanical
-                research, nutraceutical development, contract manufacturing, and
-                quality assurance. By integrating modern laboratory technologies
-                with internationally recognized manufacturing standards, we
-                consistently deliver healthcare products trusted by
-                professionals and consumers alike. Whether developing innovative
-                formulations or supporting partners through contract
-                manufacturing, we remain committed to excellence at every stage
-                of the process.
-            </p>
-        </div>
-        </div>
 
-        
+                <h3>Building Healthcare Solutions for a Better Tomorrow</h3>
+                <p>
+                    Our expertise spans pharmaceutical formulation, botanical
+                    research, nutraceutical development, contract manufacturing,
+                    and quality assurance. By integrating modern laboratory
+                    technologies with internationally recognized manufacturing
+                    standards, we consistently deliver healthcare products
+                    trusted by professionals and consumers alike. Whether
+                    developing innovative formulations or supporting partners
+                    through contract manufacturing, we remain committed to
+                    excellence at every stage of the process.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 md:p-12">
+                <div class="relative">
+                    <h4 class="pb-2">Research & Innovation</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+
+                <h3>Innovation Backed by Evidence</h3>
+
+                <p class="">
+                    Innovation is more than developing new products—it is about
+                    creating measurable improvements in patient care. Our
+                    research teams continuously explore advanced formulations,
+                    ingredient optimization, and emerging healthcare
+                    technologies to deliver solutions supported by scientific
+                    evidence and clinical understanding. Every product undergoes
+                    careful evaluation, rigorous testing, and strict quality
+                    control before reaching the market.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 md:p-12">
+                <div class="relative">
+                    <h4 class="pb-2">Manufacturing Excellence</h4>
+                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
+                    ></span>
+                </div>
+
+                <h3>Quality Built Into Every Step</h3>
+
+                <p class="">
+                    Our manufacturing processes are designed around
+                    internationally recognized quality systems and regulatory
+                    compliance. From raw material selection to packaging and
+                    distribution, every stage follows strict quality protocols
+                    that ensure consistency, safety, and reliability. Modern
+                    infrastructure, advanced laboratory facilities, and
+                    experienced professionals enable us to maintain exceptional
+                    manufacturing standards while meeting evolving market
+                    demands.
+                </p>
+            </div>
+        </div>
     </section>
 
     <section>
-        <div class="mx-4 my-12 lg:container lg:mx-auto flex flex-col gap-6 mb-24">
+        <div
+            class="mx-4 my-12 lg:container lg:mx-auto flex flex-col gap-6 mb-24"
+        >
             <div class="relative">
-                    <h4 class="pb-1">Our Core Value</h4>
-                    <span class="absolute bottom-0 bg-secondary w-16 h-1"
-                    ></span>
-                </div>
+                <h4 class="pb-2">Our Core Value</h4>
+                <span class="absolute bottom-0 bg-secondary w-16 h-1"></span>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
@@ -203,5 +249,76 @@ const coreValues = [
         </div>
     </section>
 
-    
+    <section class="bg-background p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12  container mx-auto py-24">
+            <div class="flex flex-col gap-6 justify-center">
+                <div class="relative">
+                    <h5 class="uppercase mb-2">
+                        Why HealthCare Professional choose us
+                    </h5>
+                    <span class="bg-secondary h-1 w-12 absolute offset-x-1/2"
+                    ></span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> Evidence-Based Product Development
+                    </h6>
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> International Quality Standards
+                    </h6>
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> Experienced Scientific Team
+                    </h6>
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> Advanced Manufacturing Facilities
+                    </h6>
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> Ethical & Sustainable Practices
+                    </h6>
+                    <h6 class="font-normal flex gap-2">
+                        <Icon
+                            name="lucide:check"
+                            class="bg-secondary text-white rounded-full"
+                        /> Reliable Long-Term Partnerships
+                    </h6>
+                </div>
+            </div>
+            <div class="grid  lg:grid-cols-2 gap-6 items-center">
+                <div>
+                    <Image src={heroBg} alt="founder image" />
+                </div>
+                <div class="flex flex-col gap-4">
+                    <Icon name="ri:double-quotes-l" />
+                    <h5>Our Commitment</h5>
+                    <p class="text-sm">
+                        We believe healthcare is built on trust. Every product
+                        we create reflects our commitment to scientific
+                        excellence, uncompromising quality, and the well-being
+                        of the communities we serve. As we continue to grow, our
+                        purpose remains unchanged—to deliver innovative
+                        healthcare solutions that create lasting value for
+                        patients, healthcare professionals, and partners around
+                        the world.
+                    </p>
+                    <p class="text-sm">-- Team VenixHealthCare</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
