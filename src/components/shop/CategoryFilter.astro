@@ -1,0 +1,106 @@
+---
+import { products } from "../../data/products";
+
+const categories = [
+  "All",
+  ...new Set(products.map((product) => product.category)),
+];
+---
+
+<section class="py-10">
+
+    <div class="container">
+
+        <div class="flex flex-wrap justify-center gap-4">
+
+            {
+                categories.map((category, index) => (
+
+                    <button
+                        class:list={[
+                            "shop-filter rounded-full border px-6 py-3 text-sm font-semibold transition-all duration-300",
+                            index === 0
+                                ? "bg-primary text-white border-primary"
+                                : "border-gray-200 bg-white text-gray-700 hover:border-secondary hover:bg-secondary hover:text-white"
+                        ]}
+                        data-category={category}
+                    >
+                        {category}
+                    </button>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const buttons = document.querySelectorAll(".shop-filter");
+const cards = document.querySelectorAll(".product-card");
+
+const emptyState = document.getElementById("empty-products");
+
+buttons.forEach((button)=>{
+
+    button.addEventListener("click",()=>{
+
+        const category = button.dataset.category;
+
+        buttons.forEach(btn=>{
+
+            btn.classList.remove(
+                "bg-primary",
+                "text-white",
+                "border-primary"
+            );
+
+            btn.classList.add(
+                "bg-white",
+                "text-gray-700",
+                "border-gray-200"
+            );
+
+        });
+
+        button.classList.remove(
+            "bg-white",
+            "text-gray-700",
+            "border-gray-200"
+        );
+
+        button.classList.add(
+            "bg-primary",
+            "text-white",
+            "border-primary"
+        );
+
+        let visibleCount = 0;
+
+        cards.forEach(card=>{
+
+            const cardCategory = card.dataset.category;
+
+            const show =
+                category==="All" ||
+                category===cardCategory;
+
+            card.classList.toggle("hidden",!show);
+
+            if(show) visibleCount++;
+
+        });
+
+        emptyState.classList.toggle(
+            "hidden",
+            visibleCount!==0
+        );
+
+    });
+
+});
+
+</script>

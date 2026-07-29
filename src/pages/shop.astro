@@ -1,0 +1,43 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import bg from "../assets/about_us_bg.png"
+import CategoryFilter from "../components/shop/CategoryFilter.astro";
+import ProductGrid from "../components/shop/ProductGrid.astro";
+import AmazonBanner from "../components/shop/AmazonBanner.astro";
+import FeaturedProduct from "../components/shop/FeaturedProduct.astro";
+import ShopCta from "../components/shop/Shopcta.astro";
+
+const heroTitle = `Find the Right Healthcare
+Products for Your Wellness Journey`;
+const heroSubtitle = `Explore our carefully developed healthcare
+products and purchase securely through
+our official Amazon store.`;
+const annotation = `PRODUCTS`;
+const cta = {title:'BuyNow' , href:'/'};
+---
+
+<Layout>
+
+    <HeroSection title={heroTitle} cta={cta} subtitle={heroSubtitle}  annotation={annotation} bg={bg}/>
+
+
+    <div class="container mx-auto">
+         <FeaturedProduct />
+
+    <CategoryFilter />
+
+    <ProductGrid />
+
+    <AmazonBanner />
+
+    <ShopCta />
+    </div>
+</Layout>
+
+
+
+
+   
+
+

@@ -1,0 +1,114 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="section pt-0">
+
+    <div class="container">
+
+        <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-primary via-primary to-primary/90 px-8 py-20 text-center text-white lg:px-20">
+
+            <!-- Decorative Blobs -->
+
+            <div class="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-secondary/15 blur-3xl"></div>
+
+            <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+
+            <div class="relative mx-auto max-w-4xl">
+
+                <!-- Heading -->
+
+                <p class="annotation border-white/20 bg-white/10 text-white">
+                    NEED ASSISTANCE?
+                </p>
+
+                <h2 class="mt-6 text-white">
+                    We're Here to Help You Choose the Right Healthcare Products
+                </h2>
+
+                <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/80">
+                    Whether you're looking for product recommendations, business
+                    partnerships, or more information about our healthcare
+                    solutions, our team is ready to assist you.
+                </p>
+
+                <!-- Trust Points -->
+
+                <div class="mt-12 flex flex-wrap justify-center gap-8">
+
+                    <div class="flex items-center gap-3">
+
+                        <Icon
+                            name="lucide:badge-check"
+                            class="h-6 w-6 text-secondary"
+                        />
+
+                        <span>Premium Quality</span>
+
+                    </div>
+
+                    <div class="flex items-center gap-3">
+
+                        <Icon
+                            name="lucide:shield-check"
+                            class="h-6 w-6 text-secondary"
+                        />
+
+                        <span>Trusted Formulations</span>
+
+                    </div>
+
+                    <div class="flex items-center gap-3">
+
+                        <Icon
+                            name="lucide:heart-handshake"
+                            class="h-6 w-6 text-secondary"
+                        />
+
+                        <span>Dedicated Support</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="mt-14 flex flex-wrap justify-center gap-5">
+
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center gap-3 rounded-full bg-secondary px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                    >
+
+                        Contact Us
+
+                        <Icon
+                            name="lucide:arrow-right"
+                            class="h-5 w-5"
+                        />
+
+                    </a>
+
+                    <a
+                        href="/about"
+                        class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-primary"
+                    >
+
+                        Learn More
+
+                        <Icon
+                            name="lucide:info"
+                            class="h-5 w-5"
+                        />
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

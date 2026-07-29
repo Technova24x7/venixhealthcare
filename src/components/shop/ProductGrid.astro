@@ -1,0 +1,75 @@
+---
+import ProductCard from "./ProductCard.astro";
+import { products } from "../../data/products";
+---
+
+<section class="section pt-0">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+
+            <p class="annotation">
+                OUR COLLECTION
+            </p>
+
+            <h2 class="mt-5">
+                Explore Our Healthcare Products
+            </h2>
+
+            <p class="mt-6 text-gray-600">
+                Browse our premium range of healthcare and wellness products,
+                developed with quality ingredients and backed by our commitment
+                to excellence.
+            </p>
+
+        </div>
+
+        <!-- Products -->
+
+        <div
+            id="product-grid"
+            class="grid gap-8 md:grid-cols-2 xl:grid-cols-3"
+        >
+
+            {
+                products.map((product) => (
+
+                    <ProductCard
+                        product={product}
+                    />
+
+                ))
+            }
+
+        </div>
+
+        <!-- Empty State -->
+
+        <div
+            id="empty-products"
+            class="hidden py-20 text-center"
+        >
+
+            <div
+                class="mx-auto max-w-lg rounded-[2rem] border border-dashed border-secondary/20 bg-secondary/5 p-10"
+            >
+
+                <h3>
+                    No Products Found
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    We couldn't find any products matching the selected
+                    category. Please choose another category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
