@@ -6,12 +6,11 @@ export const company = {
     description:
         "Delivering trusted Ayurvedic, Homeopathic, and Allopathic healthcare solutions through innovation, advanced manufacturing, and globally recognized quality standards. We are committed to improving lives with safe, effective, and reliable pharmaceutical products.",
 
-    address:
-        "Plot No. 101, Pharma Industrial Estate, Hyderabad, Telangana - 500001",
+    address: `VENIX HEALTH CARE S.P.O 104, Rashmi Appt.Lane 5, Koregaon Park, Pune-411001 `,
 
-    phone: "+91 98765 43210",
+    phone: "+91 90340 22299",
 
-    email: "info@mukthivardhan.com",
+    email: "venixhealthcare@gmail.com",
 
     website: "www.venixhealthcare.com",
 
